@@ -144,19 +144,16 @@ export default function Navigation() {
                     <NavigationMenuContent>
                       <ul className="grid w-[600px] font-light gap-3 p-4 grid-cols-2">
                         {menu.items?.map((item) => (
-                          <NavigationMenuItem
-                            key={item.name}
-                            className={cn([
-                              "select-none rounded-md transition-colors focus:bg-accent  hover:bg-accent",
-                              item.to === "/products/promote" &&
-                                "col-span-2 bg-primary/10 [&_a]:hover:bg-primary/20 [&_a]:focus:bg-primary/20",
-                              item.to === "/jobs/submit" &&
-                                "col-span-2 bg-primary/10 [&_a]:hover:bg-primary/20 [&_a]:focus:bg-primary/20",
-                            ])}
-                          >
+                          <NavigationMenuItem key={item.name}>
                             <NavigationMenuLink asChild>
                               <Link
-                                className="p-3 space-y-1 block leading-none no-underline outline-none"
+                                className={cn([
+                                  "p-3 space-y-1 block leading-none no-underline outline-none",
+                                  item.to === "/products/promote" &&
+                                    "col-span-2 bg-primary/10 hover:bg-primary/20 focus:bg-primary/20",
+                                  item.to === "/jobs/submit" &&
+                                    "col-span-2 bg-primary/10 hover:bg-primary/20 focus:bg-primary/20",
+                                ])}
                                 to={item.to}
                               >
                                 <span className="text-sm font-medium leading-none">
