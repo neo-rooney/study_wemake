@@ -1,7 +1,14 @@
 import { ProductCard } from "~/features/products/components/product-card";
 import { Button } from "../components/ui/button";
-import { Link } from "react-router";
+import { Link, type MetaFunction } from "react-router";
 import { PostCard } from "~/features/community/components/post-card";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Home | wemake" },
+    { name: "description", content: "Welcome to wemake" },
+  ];
+};
 
 export default function HomePage() {
   return (
